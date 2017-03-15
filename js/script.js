@@ -2,6 +2,7 @@ $(document).ready(function(){
     $("#ajaxbtn").on("click", function(event){
         let urlStr = "http://localhost:3000/api/students";
         $.getJSON(urlStr, function(data){
+            $('#students').empty();
             $.each(data, function(key, student){
                 $('#students').append('<li>'+student.firstName+'</li>')
                 console.log("First Name: ", student.firstName);
